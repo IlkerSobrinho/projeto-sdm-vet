@@ -81,4 +81,12 @@ RecursoURL / CaminhoInterface WebAbra o arquivo index.htmlSwagger OpenAPI (Clín
 
 
 
-E-mailSenhaComportamento / Cenárioativo@clinica.com123456HTTP 200 OK — Veterinário ativo e com senha confirmadainativo@clinica.com123456HTTP 403 Forbidden — Bloqueio de acesso para veterinário inativopendente@clinica.com123456HTTP 403 Forbidden — Bloqueio por confirmação pendente (Código: CODIGO-123)
+E-mailSenhaComportamento / Cenárioativo@clinica.com123456HTTP 200 OK — Veterinário ativo e com senha confirmadainativo@clinica.com123456HTTP 403 Forbidden — Bloqueio de acesso para veterinário inativopendente@clinica.com123456HTTP 403 Forbidden — Bloqueio por confirmação pendente (Código: CODIGO-123)📁 Estrutura do Projetotextprojeto-sdm-vet/
+├── api_clinica.py
+├── api_governo.py
+├── index.html
+├── requirements.txt
+├── schema.sql
+├── clinica.db          # gerado automaticamente
+├── governo.db          # gerado automaticamente
+└── README.md
