@@ -32,56 +32,76 @@ O projeto demonstra conceitos de **Sistemas Distribuídos**, operando com servi�
 
 ```bash
 git clone https://github.com/IlkerSobrinho/projeto-sdm-vet.git
-cd projeto-sdm-vet2. Criar e Ativar o Ambiente VirtualWindows (PowerShell):PowerShellpython -m venv .venv
+cd projeto-sdm-vet
+```
+
+### 2. Criar e Ativar o Ambiente Virtual
+
+**Windows (PowerShell):**
+
+```powershell
+python -m venv .venv
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-.venv\Scripts\activateLinux / macOS:Bashpython3 -m venv .venv
-source .venv/bin/activate3. Instalar as DependênciasBashpip install -r requirements.txt4. Iniciar os ServiçosAbra dois terminais:Terminal 1 — API Governamental (Porta 8001):Bashuvicorn api_governo:app --reload --port 8001Terminal 2 — API da Clínica (Porta 8000):Bashuvicorn api_clinica:app --reload --port 8000Nota: Na primeira inicialização da API da Clínica, os bancos clinica.db e governo.db são gerados automaticamente com dados iniciais de teste.🌐 Acessos e Documentação
+.venv\Scripts\activate
+```
 
+**Linux / macOS:**
 
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
+### 3. Instalar as Dependências
 
+```bash
+pip install -r requirements.txt
+```
 
+### 4. Iniciar os Serviços
 
+Abra **dois terminais**:
 
+**Terminal 1 — API Governamental (Porta 8001):**
 
+```bash
+uvicorn api_governo:app --reload --port 8001
+```
 
+**Terminal 2 — API da Clínica (Porta 8000):**
 
+```bash
+uvicorn api_clinica:app --reload --port 8000
+```
 
+> **Nota:** Na primeira inicialização da API da Clínica, os bancos `clinica.db` e `governo.db` são gerados automaticamente com dados iniciais de teste.
 
+---
 
+## 🌐 Acessos e Documentação
 
+| Recurso                        | URL / Caminho                  |
+|--------------------------------|--------------------------------|
+| Interface Web                  | Abra o arquivo `index.html`    |
+| Swagger OpenAPI (Clínica)      | http://localhost:8000/docs     |
+| Swagger OpenAPI (Governo)      | http://localhost:8001/docs     |
 
+---
 
+## 🧪 Contas Pré-configuradas para Teste de Login
 
+| E-mail               | Senha  | Comportamento / Cenário                                              |
+|----------------------|--------|----------------------------------------------------------------------|
+| ativo@clinica.com    | 123456 | HTTP 200 OK — Veterinário ativo e com senha confirmada               |
+| inativo@clinica.com  | 123456 | HTTP 403 Forbidden — Bloqueio de acesso para veterinário inativo     |
+| pendente@clinica.com | 123456 | HTTP 403 Forbidden — Bloqueio por confirmação pendente (Código: CODIGO-123) |
 
+---
 
+## 📁 Estrutura do Projeto
 
-RecursoURL / CaminhoInterface WebAbra o arquivo index.htmlSwagger OpenAPI (Clínica)http://localhost:8000/docsSwagger OpenAPI (Governo)http://localhost:8001/docs🧪 Contas Pré-configuradas para Teste de Login
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-E-mailSenhaComportamento / Cenárioativo@clinica.com123456HTTP 200 OK — Veterinário ativo e com senha confirmadainativo@clinica.com123456HTTP 403 Forbidden — Bloqueio de acesso para veterinário inativopendente@clinica.com123456HTTP 403 Forbidden — Bloqueio por confirmação pendente (Código: CODIGO-123)📁 Estrutura do Projetotextprojeto-sdm-vet/
+```
+projeto-sdm-vet/
 ├── api_clinica.py
 ├── api_governo.py
 ├── index.html
@@ -90,3 +110,4 @@ E-mailSenhaComportamento / Cenárioativo@clinica.com123456HTTP 200 OK — Veteri
 ├── clinica.db          # gerado automaticamente
 ├── governo.db          # gerado automaticamente
 └── README.md
+```
