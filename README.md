@@ -4,7 +4,7 @@ Projeto desenvolvido para a Avaliação A3 da disciplina de **Sistemas Distribu�
 
 ---
 
-## 🏗️ Arquitetura do Sistema
+##  Arquitetura do Sistema
 
 O projeto demonstra conceitos de **Sistemas Distribuídos**, operando com serviços desacoplados que se comunicam via HTTP/REST:
 
@@ -26,7 +26,7 @@ O projeto demonstra conceitos de **Sistemas Distribuídos**, operando com servi�
 
 ---
 
-## 🚀 Como Executar o Projeto
+##  Como Executar o Projeto
 
 ### 1. Clonar o Repositório
 
@@ -78,7 +78,7 @@ uvicorn api_clinica:app --reload --port 8000
 
 ---
 
-## 🌐 Acessos e Documentação
+##  Acessos e Documentação
 
 | Recurso                        | URL / Caminho                  |
 |--------------------------------|--------------------------------|
@@ -88,7 +88,7 @@ uvicorn api_clinica:app --reload --port 8000
 
 ---
 
-## 🧪 Contas Pré-configuradas para Teste de Login
+##  Contas Pré-configuradas para Teste de Login
 
 | E-mail               | Senha  | Comportamento / Cenário                                              |
 |----------------------|--------|----------------------------------------------------------------------|
@@ -98,7 +98,7 @@ uvicorn api_clinica:app --reload --port 8000
 
 ---
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```
 projeto-sdm-vet/
